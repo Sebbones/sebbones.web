@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastian Münster</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
+</head>
+<body>
+  <section id="entry" data-scroll-to="about"></section>
+  <section class="section--light" id="about">
+    <h2 class="section-title">
+      <i class="fas fa-hashtag"></i>
+      About
+    </h2>
+    <div x-template="assets/data/about.txt" x-bind-*="el@innerText"></div>
+  </section>
+  <section class="section--dark" id="skills">
+      <h2 class="section-title">
+        <i class="fas fa-code"></i>
+        Skills
+      </h2>
+      <div class="skill-container">
+        <div class="skill-list">
+          <h2>Development</h2>
+          <ul>
+            <li class="skill" x-template="assets/data/skills.json:dev">
+              <div class="skill-desc" x-bind-name="el@innerText"></div>
+              <div class="skill-value">
+                <div class="slider --dark">
+                  <div class="progress" x-bind-value="style@width.%"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-list">
+          <h2>Languages</h2>
+          <ul>
+            <li class="skill" x-template="assets/data/skills.json:langs">
+              <div class="skill-desc" x-bind-name="el@innerText"></div>
+              <div class="skill-value">
+                <div class="slider --dark">
+                  <div class="progress" x-bind-value="style@width.%"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+</body>
+</html>

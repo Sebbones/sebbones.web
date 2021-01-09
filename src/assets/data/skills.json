@@ -1,0 +1,62 @@
+{
+  "dev": [
+    {
+      "name": "Angular",
+      "value": 90
+    },
+    {
+      "name": ".NET Core",
+      "value": 75
+    },
+    {
+      "name": "Javascript / Typescript",
+      "value": 75
+    },
+    {
+      "name": "HTML / (S)Css",
+      "value": 75
+    },
+    {
+      "name": "Elastic Search / Kibana",
+      "value": 50
+    },
+    {
+      "name": "MongoDB",
+      "value": 50
+    },
+    {
+      "name": "ReactJS",
+      "value": 50
+    },
+    {
+      "name": "Docker",
+      "value": 50
+    },
+    {
+      "name": "SQL",
+      "value": 50
+    },
+    {
+      "name": "Vue.js",
+      "value": 30
+    },
+    {
+      "Name": "HANA DB",
+      "value": 30
+    }
+  ],
+  "langs": [
+    {
+      "name": "English",
+      "value": 80
+    },
+    {
+      "name": "German (native)",
+      "value": 100
+    },
+    {
+      "name": "Spanish",
+      "value": 20
+    }
+  ]
+}
