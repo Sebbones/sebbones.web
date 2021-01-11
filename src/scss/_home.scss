@@ -1,0 +1,225 @@
+@import './media';
+
+@mixin home($theme) {
+  .menu {
+
+    @include page-pad-x();
+
+    display: grid;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    max-height: 64px;
+    transition: max-height 0.2s;
+
+    
+    .nav {
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+          list-style: none;
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+
+          
+          a {
+            text-decoration: none;
+            color: white;
+            // font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            &.active {
+              color: #932c47;
+              position: relative;
+              text-align: center;
+              &::before {
+                content: "";
+                position: absolute;
+                width: calc(100% + 8px);
+                top: 50%;
+                left: -6px;
+                height: 2px;
+                background-color: #932c47;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      .logo {
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+        margin-right: auto;
+      }
+      .nav-burger {
+        margin-left: auto;
+        display: none;
+        color: white;
+      }
+      @include ms-sm {
+        .nav-burger {
+          display: block;
+        }
+      }
+    }
+
+
+    @include ms-sm {
+      background-color: #202124;
+      .nav {
+        display: none;
+      }
+    }
+
+    &.--expanded {
+      background-color: #202124;
+      flex-direction: column;
+      align-items: flex-start;
+
+      max-height: 500px;
+      transition: max-height 0.2s;
+      
+      .nav {
+        display: block;
+        margin-top: 1rem;
+        ul {
+          flex-direction: column;
+          li {
+            display: block;
+            padding: .6rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  .home {
+    height: 100vh;
+    color: white;
+
+    background: url('../img/ubuntu.jpg') no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+
+    .home-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .home-message {
+      text-align: center;
+      font-size: 72px;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 100px;
+      cursor: pointer;
+    }
+
+    .scroll-down a {
+      padding-top: 75px;
+      display: block;
+    }
+    .scroll-down a span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: sdb07 2s infinite;
+      animation: sdb07 2s infinite;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+
+    .scroll-down a span:nth-of-type(1) {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+
+    .scroll-down a span:nth-of-type(2) {
+      top: 16px;
+      -webkit-animation-delay: .15s;
+      animation-delay: .15s;
+    }
+
+    .scroll-down a span:nth-of-type(3) {
+      top: 32px;
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s;
+    }
+
+    @keyframes sdb07 {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  .menu.navbar-fixed {
+    position: fixed;
+    animation: fadeIn 200ms;
+    background-color: #202124;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(#202124, 1);
+    &-nav {
+
+    }
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

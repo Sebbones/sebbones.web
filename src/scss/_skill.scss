@@ -1,0 +1,89 @@
+@mixin skills($theme) {
+
+  $primary: map-get($theme, primary);
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-row: auto;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-card {
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    // box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .skill-logo {
+    font-size: 40px;
+
+  }
+
+  .skill-title {
+    margin-top: 1rem;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .skill-details {
+    margin-top: 1rem;
+  }
+
+  .skill-list {
+    list-style: none;
+    margin: 0;
+  }
+  .skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .skill-name {
+    margin-right: .5rem;
+  }
+
+  .skill-level {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: .2rem;
+    align-items: center;
+  }
+
+  .skill-level-progress {
+    width: .75rem;
+    height: .75rem;
+    background-color: #c7c7c7;
+    border-radius: .5rem;
+
+    &.active {
+      background-color: $primary;
+    }
+  }
+
+  // .skill-level {
+  //   width: 100px;
+  //   height: 10px;
+  //   overflow: hidden;
+  //   border-radius: 1rem;
+
+  //   border: 1px solid rgb(103,28,93);
+
+  //   position: relative;
+    
+  //   &-progress {
+  //     width: 40%;
+  //     height: 100%;
+  //     background: linear-gradient(90deg, rgba(103,28,93,1) 0%, rgba(137,41,78,1) 50%, rgba(187,61,45,1) 100%);
+  //   }
+  // }
+}

@@ -1,0 +1,45 @@
+@mixin ms-tablet-p {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ms-tablet-l {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin ms-md {
+  @include ms-tablet-l {
+    @content;
+  }
+}
+
+@mixin ms-sm {
+  @include ms-tablet-p {
+    @content;
+  }
+}
+
+@mixin pad($size) {
+  padding-left: $size;
+  padding-right: $size;
+}
+
+@mixin page-pad-x() {
+  @include pad(10rem);
+
+  @media (max-width: 1024px) {
+    @include pad(3rem);
+  }
+
+  @media (max-width: 768px) {
+    @include pad(1rem);
+  }
+}
+
+@mixin page-pad-y() {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

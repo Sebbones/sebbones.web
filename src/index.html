@@ -1,21 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebastian Münster</title>
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM" crossorigin="anonymous">
 </head>
+
 <body>
-  <section id="entry" data-scroll-to="about"></section>
-  <section class="section--light" id="about">
+  <nav class="menu" id="menu">
+
+    <div class="header">
+      <div class="logo">
+        SEBASTIAN MÜNSTER
+      </div>
+
+      <div class="nav-burger" id="navBurger">
+        <i class="fas fa-bars fa-lg"></i>
+      </div>
+
+    </div>
+
+    <div class="nav">
+      <ul>
+        <li>
+          <a data-scroll-to="home"> HOME </a>
+        </li>
+        <li><a data-scroll-active="active" data-scroll-to="about"> ABOUT </a></li>
+        <li>
+          <a data-scroll-active="active" data-scroll-to="skills"> SKILLS </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  <section id="home" class="home">
+    <div class="home-container">
+      <div class="home-message">Hey, there 👋</div>
+      <div class="scroll-down">
+        <a data-scroll-to="about">
+          <span></span>
+          <span></span>
+          <span></span>
+          Explore
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="about">
     <h2 class="section-title">
-      <i class="fas fa-hashtag"></i>
+      <!-- <i class="fas fa-hashtag"></i> -->
       About
     </h2>
-    <div x-template="assets/data/about.txt" x-bind-*="el@innerText"></div>
+    <div class="about-card" style="margin-top: 3rem">
+      <div class="inner">
+        <div class="info">
+          <div class="avatar">
+            <img src="assets/profile.png" alt="">
+          </div>
+          <div class="name">
+            Sebastian Münster
+          </div>
+          <div class="job">
+            Software Developer
+          </div>
+          <div class="social">
+            <a href="https://github.com/Sebbones">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bio">
+          <div class="bio-text">
+            <h2>Biography</h2>
+            <div x-template="assets/data/about.txt" x-bind-*="el@innerText"></div>
+          </div>
+          <div class="sub">
+            <div class="education">
+              <h2> <i class="far fa-diploma"></i> Education</h2>
+              <ul>
+                <li>
+                  <h4>
+                    Apprenticeship, Software Developer
+                  </h4>
+                  Berufskolleg fuer Technik | Moers
+
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="divider"></div> -->
+            <div class="interests">
+              <h2> <i class="far fa-gamepad"></i> Interrests </h2>
+              <ul>
+                <li> Bouldering </li>
+                <li> Strength Sports </li>
+                <li> Coding </li>
+                <li> Gaming </li>
+                <li> Cooking </li>
+                <li>
+                  <div class="skill-level">
+                    <div class="skill-level-progress"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  <section class="section--dark" id="skills">
+  <section id="skills" class="--light">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fab fa-docker fa-lg"></i>
+        </div>
+        <div class="skill-title">
+          DevOps
+        </div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">Azure Pipelines</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Docker</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fas fa-brackets-curly fa-lg"></i>
+        </div>
+        <div class="skill-title">Coding</div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">C#</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Java-/Tyepscript</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Html</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">S(C)ss</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fas fa-database fa-lg"></i>
+        </div>
+        <div class="skill-title">
+          Databases
+        </div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">Mssql</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Mongodb</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Sqlite</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">SAP Hana</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fas fa-code fa-lg"></i>
+        </div>
+        <div class="skill-title">
+          Frameworks / Libraries
+        </div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">Angular</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">.NET Core</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">React JS</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Vue JS</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fas fa-box-full fa-lg"></i>
+        </div>
+        <div class="skill-title">
+          Other
+        </div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">Elasticsearch (ELK)</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">Linux</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-logo">
+          <i class="fas fa-language fa-lg"></i>
+        </div>
+        <div class="skill-title">
+          Languages
+        </div>
+        <div class="skill-details">
+          <ul class="skill-list">
+            <li class="skill">
+              <span class="skill-name">German</span>
+              <div class="skill-level">
+                <div>
+                  Native
+                </div>
+              </div>
+            </li>
+            <li class="skill">
+              <span class="skill-name">English</span>
+              <div class="skill-level">
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress active"></div>
+                <div class="skill-level-progress"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="footer">
+    <h2>Made with ❤️ by me</h2>
+    <h3><i class="far fa-copyright fa-lg" style="margin-right: 1rem;"></i>Sebastian Münster</h3>
+  </section>
+  <!-- <section class="section--dark page-pad" id="skills">
       <h2 class="section-title">
         <i class="fas fa-code"></i>
         Skills
@@ -48,6 +402,7 @@
           </ul>
         </div>
       </div>
-  </section>
+  </section> -->
 </body>
+
 </html>

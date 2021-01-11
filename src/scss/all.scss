@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
 
+@import "./home";
+@import "./about";
+@import "./media";
+@import "./skill";
+
+
+$primary: #74205e;
+
+$theme: (
+  primary: $primary
+);
+
+:root {
+  --x-primiary: $primary;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,67 +25,41 @@ body {
   }
 }
 
-$primary: #BB86FC;
-
-:root {
-  --x-primiary: $primary;
-}
-
-#entry {
-  background: url('../img/entry-bg.png') no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-}
+@include home($theme);
+@include about($theme);
+@include skills($theme);
 
 section {
-  padding: 3rem 1rem;
-}
-.section {
-  &--dark {
-    background-color: #292929;
-    color: #D8D8D8;
-  }
-  &--light {
-    background-color: F2F2F2;
+  @include page-pad-x();
+  @include page-pad-y();
+
+  &.--light {
+    background-color: #f3f3f3;
     color: #202124;
   }
+}
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section {
   &-title {
     margin: 0;
     text-align: center;
     font-size: 50px;
+    color: #202124;
   }
 }
 
-.skill-container {
+
+#footer {
+  min-height: 300px;
   display: flex;
-  .skill-list {
-    flex: 1;
-    ul {
-      li.skill {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        &-desc { }
-        &-value {
-          font-size: 30px;
-        }
-      }
-    }
-  }
-}
-
-.slider {
-  width: 100%;
-  
-  &.--dark {
-
-    background-color: rgba($primary, .7);
-
-    .progress {
-      height: .5rem;
-      background-color: $primary;
-    }
-  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #202124;
+  color: #f3f3f3;
 }
